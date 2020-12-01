@@ -74,7 +74,7 @@ d3.csv("assets/data/data.csv").then(function(IncomeData) {
       .style("border-width", "2px")
       .style("border-radius", "5px")
       .html(function(d) {
-        return (`${d.state}<br>% Healthcare: ${d.healthcare}<br>Poverty Rate: ${d.poverty}`);
+        return (`${d.state}<br>% Lacking Healthcare: ${d.healthcare}<br>Poverty Rate: ${d.poverty}`);
       });
 
    //call tooltip
@@ -97,6 +97,14 @@ d3.csv("assets/data/data.csv").then(function(IncomeData) {
       .attr("dy", "1em")
       .attr("class", "axisText")
       .text("% Lacking Healthcare");
+
+    chartGroup.append("text")
+    .data(IncomeData)
+    .enter()
+    .append("text")
+    .text(function(d) {
+        return d.abbr;
+    })
 
     chartGroup.append("text")
       .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + margin.top + 30})`)

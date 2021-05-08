@@ -1,4 +1,4 @@
-# d3-challenge
+# Poverty Rate and Healthcare Access Web Interface
 
 In this challenge, I created a scatter plot to display the poverty rate and access to healthcare for populations in each state in the US.
 
